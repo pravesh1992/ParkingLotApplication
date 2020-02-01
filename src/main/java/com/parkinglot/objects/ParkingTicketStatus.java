@@ -10,8 +10,8 @@ public class ParkingTicketStatus extends ParkingTicket {
     calculateTotalParkingCharge();
   }
 
-  public void setTotalParkingCharge(int totalParkingCharge) {
-    this.totalParkingCharge = totalParkingCharge;
+  public int getTotalParkingCharge() {
+    return totalParkingCharge;
   }
 
   private void calculateTotalParkingCharge() {

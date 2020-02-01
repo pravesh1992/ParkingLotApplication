@@ -35,9 +35,6 @@ public class ParkingTicket implements Serializable {
 
   @Override
   public String toString() {
-    return "ParkingTicket{" +
-      "registrationNumber='" + registrationNumber + '\'' +
-      ", allocatedSlotNumber=" + allocatedSlotNumber +
-      '}';
+    return allocatedSlotNumber + " " + registrationNumber;
   }
 }

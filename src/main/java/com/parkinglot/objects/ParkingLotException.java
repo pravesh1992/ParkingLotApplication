@@ -1,6 +1,6 @@
 package com.parkinglot.objects;
 
-import com.parkinglot.ParkingLotErrorCodes;
+import com.parkinglot.exception.ParkingLotErrorCodes;
 
 public class ParkingLotException extends Exception {
   ParkingLotErrorCodes errorCode;
@@ -12,9 +12,13 @@ public class ParkingLotException extends Exception {
     this.errorMessage = errorMessage;
   }
 
-  ParkingLotException(ParkingLotErrorCodes errorCode, String errorMessage, Throwable throwable) {
+  public ParkingLotException(ParkingLotErrorCodes errorCode, String errorMessage, Throwable throwable) {
     super(errorMessage, throwable);
     this.errorCode = errorCode;
     this.errorMessage = errorMessage;
+  }
+
+  public String getErrorMessage() {
+    return errorMessage;
   }
 }

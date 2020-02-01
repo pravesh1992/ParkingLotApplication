@@ -1,4 +1,4 @@
-package com.parkinglot;
+package com.parkinglot.exception;
 
 public enum ParkingLotErrorCodes {
   INTERNAL_SERVER_ERROR(2001),
@@ -7,7 +7,8 @@ public enum ParkingLotErrorCodes {
   PARKING_LOT_IS_FULL(2004),
   CAR_IS_ALREADY_PARKED(2005),
   INVALID_PARKED_TIME_VALUE(2006),
-  CAR_NOT_PARKED(2007);
+  CAR_NOT_PARKED(2007),
+  COMMAND_NOT_FOUND(2008);
 
   int code;
 
