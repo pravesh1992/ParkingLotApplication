@@ -23,7 +23,7 @@ public class ParkingTicketStatus extends ParkingTicket {
     return "ParkingTicketStatus{" +
       "registrationNumber='" + getRegistrationNumber() + '\'' +
       ", allocatedSlotNumber=" + getAllocatedSlotNumber() +
-      "numberOfHoursCarParked=" + numberOfHoursCarParked +
+      ", numberOfHoursCarParked=" + numberOfHoursCarParked +
       ", totalParkingCharge=" + totalParkingCharge +
       '}';
   }

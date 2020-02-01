@@ -23,8 +23,14 @@ public class ParkingLotTest {
       System.out.println(parkingTicket);
     }
     parkingTicketStatuses.add(parkingLotApplication.leave("KA-01-HH-1234", 4));
+    parkingTicketStatuses.add(parkingLotApplication.leave("KA-01-HH-3141", 6));
+    parkingTicketStatuses.add(parkingLotApplication.leave("KA-01-HH-2701", 5));
     for (ParkingTicketStatus parkingTicketStatus : parkingTicketStatuses) {
       System.out.println(parkingTicketStatus);
+    }
+    parkingTickets.add(parkingLotApplication.parkCar("KA-01-HH-8888"));
+    for (ParkingTicket parkingTicket : parkingTickets) {
+      System.out.println(parkingTicket);
     }
   }
 }

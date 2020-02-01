@@ -22,7 +22,6 @@ public class ParkingLotApplication {
     parkingTickets = new HashSet<>(this.size);
   }
 
-
   public ParkingTicket parkCar(String registrationNumber) throws ParkingLotException {
     if (!isParkingSlotCreated())
       throw new ParkingLotException(ParkingLotErrorCodes.PARKING_LOT_NOT_CREATED, "Parking lot is not created, please created parking lot first and park your car");
@@ -46,10 +45,9 @@ public class ParkingLotApplication {
       throw new ParkingLotException(ParkingLotErrorCodes.CAR_NOT_PARKED, "Car with registration number:" + registrationNumber + " is not parked in parking slot");
     ParkingTicket actualParkingTicket = getParkingTicket(registrationNumber);
     parkingTickets.remove(actualParkingTicket);
-    allocatedParkingSlotNumbers.remove(actualParkingTicket.getAllocatedSlotNumber());
+    allocatedParkingSlotNumbers.remove(allocatedParkingSlotNumbers.indexOf(actualParkingTicket.getAllocatedSlotNumber()));
     return new ParkingTicketStatus(actualParkingTicket, numberOfHoursCarParked);
   }
-
 
   private boolean isParkingSlotCreated() {
     return parkingTickets != null;
