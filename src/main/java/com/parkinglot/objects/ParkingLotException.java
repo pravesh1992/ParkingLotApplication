@@ -18,6 +18,10 @@ public class ParkingLotException extends Exception {
     this.errorMessage = errorMessage;
   }
 
+  public ParkingLotErrorCodes getErrorCode() {
+    return errorCode;
+  }
+
   public String getErrorMessage() {
     return errorMessage;
   }

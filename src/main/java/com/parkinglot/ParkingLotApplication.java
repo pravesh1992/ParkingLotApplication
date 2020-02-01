@@ -72,6 +72,8 @@ public class ParkingLotApplication {
   }
 
   public ParkingTicketStatus leave(String registrationNumber, int numberOfHoursCarParked) throws ParkingLotException {
+    if (!isParkingSlotCreated())
+      throw new ParkingLotException(ParkingLotErrorCodes.PARKING_LOT_NOT_CREATED, "Parking lot is not created, please created parking lot first and park your car");
     if (numberOfHoursCarParked <= 0)
       throw new ParkingLotException(ParkingLotErrorCodes.INVALID_PARKED_TIME_VALUE, "Number Of hours car parked can't be less the zero");
     int dummyParkingSLot = Integer.MAX_VALUE;
