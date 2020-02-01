@@ -24,9 +24,9 @@ public class ParkingLotApplication {
 
 
   public ParkingTicket parkCar(String registrationNumber) throws ParkingLotException {
-    if (isParkingSlotCreated())
+    if (!isParkingSlotCreated())
       throw new ParkingLotException(ParkingLotErrorCodes.PARKING_LOT_NOT_CREATED, "Parking lot is not created, please created parking lot first and park your car");
-    if (isParkingAvailable())
+    if (!isParkingAvailable())
       throw new ParkingLotException(ParkingLotErrorCodes.PARKING_LOT_IS_FULL, "Sorry, parking lot is full");
     int availableParkingSlotNumber = getAvailableParkingSlotNumber();
     ParkingTicket parkingTicket = new ParkingTicket(registrationNumber, availableParkingSlotNumber);
@@ -42,7 +42,7 @@ public class ParkingLotApplication {
       throw new ParkingLotException(ParkingLotErrorCodes.INVALID_PARKED_TIME_VALUE, "Number Of hours car parked can't be less the zero");
     int dummyParkingSLot = Integer.MAX_VALUE;
     ParkingTicket parkingTicket = new ParkingTicket(registrationNumber, dummyParkingSLot);
-    if (parkingTickets.contains(parkingTicket))
+    if (!parkingTickets.contains(parkingTicket))
       throw new ParkingLotException(ParkingLotErrorCodes.CAR_NOT_PARKED, "Car with registration number:" + registrationNumber + " is not parked in parking slot");
     ParkingTicket actualParkingTicket = getParkingTicket(registrationNumber);
     parkingTickets.remove(actualParkingTicket);
